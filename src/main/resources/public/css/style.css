@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Merienda+One&display=swap');
 
-body{
+
+ body{
 background-image: url('https://cdn.statically.io/img/images.hdqwalls.com/download/bad-cyber-girl-4k-7t-1920x1080.jpg');
 background-repeat: no-repeat;
 height:100%;
@@ -10,7 +12,185 @@ font-family: 'Merienda One', cursive;
 color: white;
 }
 .welcome{
-color:yellow;
-font-family:Merienda;
+
+font-family:Charm;
+text-align: center;
+font-size: calc(20px + 18vh);
+  line-height: calc(20px + 20vh);
+/*   text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+    0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092;
+  color: #fccaff; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  font-family: "Sacramento", cursive;
+  text-align: center;
+  animation: blink 12s infinite;
+  -webkit-animation: blink 12s infinite;
+}
+.hero-btn{
+  background: rgb(11, 68, 35);
+  color: white;
+  padding: 5px;
+  width: 60%;
+  position: absolute;
+  bottom: 5%;
+  left: 20%;
+  cursor: pointer;
+  font-family: 'Abel', sans-serif;
+  font-size: 25px;
+  outline: none;
+  z-index: 5;
+}
+.hero-btn:hover{
+  background: rgba(255,255,255,0.8);
+  transition: all 0.4s ease;
+  color: black;
+}
+.hero-btn::after{
+  content: "";
+  display: block;
+  border:25px solid rgb(11, 68, 35);
+  position: absolute;
+  top: -5px;
+  border-radius: 50%;
+  left: -35px;
+  transition: all 0.4s ease;
+  z-index: 2;
+}
+.hero-btn:hover::after{
+  border-color:rgb(209,209,209);
+  cursor: pointer;
+  left: 92%;
+  transition: all 0.5s ease;
+}
+@keyframes load{
+  0%{left: -100vw;}
+  20%{left: -50vw;box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+  60%{box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+}
+@keyframes load1{
+  0%{left: -150vw;}
+  20%{left: -10vw;box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+  60%{box-shadow: 0px 0px 20px rgb(255, 255, 255)}
+}
+.form-cont{
+  position: relative;
+  width: 100%;
+  z-index: 3;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 10vh;
+  font-family: 'Abel', sans-serif;
+}
+.form-cont>div{
+  background: rgba(255, 255, 255, 0.089);
+  position: relative;
+  height: 70%;
+  text-align: center;
+  padding-top: 40px;
+}
+.form-cont>div>a{
+  display: inline-block;
+  padding: 20px;
+  background: rgb(23, 43, 23);
+  color: white;
+  width: 70%;
+  left: 15%;
+}
+
+.form{
+  position: relative;
+  z-index: 3;
+  width: 500px;
+  margin-top: 15vh;
 
 }
+.form>h1{
+  color: white;
+  font-size: 2.3em;
+}
+.form>input[type=text],
+.form>input[type=number]{
+  background: none;
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  border-bottom: 1px solid white;
+  color: white;
+  outline: none;
+  display: block;
+  animation: formLd 1.2s linear 1;
+  font-size: 1em;
+}
+.form>input[type=text]:nth-child(even){
+	animation: formLd 0.8s linear 1;
+}
+@keyframes formLd{
+	0%{width: 0%;border-color: green;box-shadow: 0px 2px 2px rgba(255,255,255,0.3);}
+	100%{border-color: orange;box-shadow: 0px 2px 2px rgba(255,255,255,0.3);}
+}
+
+.form input[type=submit]{
+  margin-top: 10px;
+  background: rgb(17, 54, 17);
+  width: 100%;
+  padding: 5px;
+  color: white;
+  font-size: 20px
+}
+
+
+
+@-webkit-keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+@keyframes blink {
+  20%,
+  24%,
+  55% {
+    color: #111;
+    text-shadow: none;
+  }
+
+  0%,
+  19%,
+  21%,
+  23%,
+  25%,
+  54%,
+  56%,
+  100% {
+/*     color: #fccaff;
+    text-shadow: 0 0 5px #f562ff, 0 0 15px #f562ff, 0 0 25px #f562ff,
+      0 0 20px #f562ff, 0 0 30px #890092, 0 0 80px #890092, 0 0 80px #890092; */
+  text-shadow: 0 0 5px #ffa500, 0 0 15px #ffa500, 0 0 20px #ffa500, 0 0 40px #ffa500, 0 0 60px #ff0000, 0 0 10px #ff8d00, 0 0 98px #ff0000;
+    color: #fff6a9;
+  }
+}
+
+
+
+
