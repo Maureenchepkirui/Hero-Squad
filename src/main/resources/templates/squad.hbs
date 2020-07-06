@@ -9,14 +9,12 @@
         <div class="squad">
             <div id="newMember">
                 <p class="close">&cross;</p>
-                <h2>Choose Squad Members</h2>
-            {{#each heroes}}
-                 <div class="hero-item">
-
-                  <div class="hero-detail">
-                    <p>Name: {{name}}</p>
-                    <p>Super power: {{ power }}</p>
-                    <a class="btns" href="/squad/new/{{id}}">Add To Squad</a>
+                <div class="col-md-6">
+                <h2>ADD HEROES TO A SQUAD</h2>
+                  {{#each heroes}}
+                      <p>Name: {{name}}</p>
+                      <p>Super power: {{ power }}</p>
+                     <a class="btns" href="/squad-form">Add To Squad</a>
                   </div>
                 </div>
             {{/each}}

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 
 body{
 background-image: url('https://cdn.statically.io/img/images.hdqwalls.com/download/bad-cyber-girl-4k-7t-1920x1080.jpg');
@@ -6,4 +6,11 @@ background-repeat: no-repeat;
 height:100%;
 background-size: cover;
 background-position: center ;
+font-family: 'Merienda One', cursive;
+color: white;
+}
+.welcome{
+color:yellow;
+font-family:Merienda;
+
 }
