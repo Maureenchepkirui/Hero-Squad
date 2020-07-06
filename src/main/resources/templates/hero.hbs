@@ -1,22 +1,28 @@
 {{#partial "content"}}
-    <section class="hero-land">
-        <h2> <a class="btn" href="/hero-form" >Create Your Hero</a></h2>
-        <div class="heroes">
+    <section>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="/hero-form" class="btn btn-info">CREATE HERO</a>
+                          {{#each hero}}
+                            <div class="hero-item">
 
-            {{#each hero}}
-                <div class="hero-item">
+                                <p>Name: {{ name }} </p>
+                                <p>Age: {{ age }}</p>
+                                <p>Special power: {{ power }}</p>
+                                <p>Weakness: {{ weakness }}</p>
+                                <p>Id: {{ id }}</p>
+                                <a href="new/{{id}}" class="btn btn-info">DETAILS</a>
+                                <a href="/squad-form" class="btn btn-info">Add TO SQUAD</a>
+                            </div>
 
-                    <p>Name: {{ name }} </p>
-                    <p>Age: {{ age }}</p>
-                    <p>Special power: {{ power }}</p>
-                    <p>Weakness: {{ weakness }}</p>
-                    <p>Id: {{ id }}</p>
-                    <a href="new/{{id}}" class="btns">Learn More</a>
-                    <a href="/squad-form" class="btns">Add {{ name }} To Squad</a>
+                        {{/each}}
+                    </div>
+
                 </div>
-
-            {{/each}}
+            </div>
         </div>
+
     </section>
 {{/partial}}
 {{> layout.hbs}}

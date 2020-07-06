@@ -1,56 +1,29 @@
 
 {{#partial "content"}}
-    <section class="landing-pg">
-        <div class="land-left">
-        </div>
-        <div class="land-right">
-        </div>
+    <section>
+        <div class="col-md-3">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a href="/squad-form" class="btn btn-info">CREATE SQUAD</a>
+                    {{#if squads}}
+                        <h3>CURRENT SQUADS</h3>
 
-        <div class="squad">
-            <div id="newMember">
-                <p class="close">&cross;</p>
-                <div class="col-md-6">
-                <h2>ADD HEROES TO A SQUAD</h2>
-                  {{#each heroes}}
-                      <p>Name: {{name}}</p>
-                      <p>Super power: {{ power }}</p>
-                     <a class="btns" href="/squad-form">Add To Squad</a>
-                  </div>
-                </div>
-            {{/each}}
-            </div>
-            <h2>
-                <a class="btns" href="/squad-form">Create Your Squad</a>
-                <br><br>
-        {{#if squads}}
-                AVAILABLE SQUADS
-            </h2>
-        {{#each squads}}
-            <div class="squad-cont">
-                <img src="" alt="">
-                <div>
-                  <h1>{{ squadName }} </h1>
-                    <p>Id: {{squadId}}</p>
-                    <p>Purpose: {{cause}}</p>
-                    <p>Max participants: {{ size }}</p>
-                    <br><br>
-                  <h3>MEMBERS</h3>
-                    {{#each squadMembers}}
-                        <div class="member-cont">
-                            <h5>Name: {{this.name}}</h5>
-                            <h5>Power: {{power}}</h5>
-                            <Button class="btns">Remove</Button>
-                        </div>
-                    {{/each}}
+                        {{#each squads}}
+                            <h1>{{ squadName }} </h1>
+                            <p>Id: {{squadId}}</p>
+                            <p>Purpose: {{cause}}</p>
+                            <p>Max participants: {{ size }}</p>
+                            <br><br>
 
-
+                        {{/each}}
+                    {{else}}
+                        <h2>Add Squad to proceed</h2>
+                    {{/if}}
                 </div>
             </div>
-        {{/each}}
-        {{else}}
-            <h2>Please create a squad to continue</h2>
-        {{/if}}
+
         </div>
+
 
     </section>
 {{/partial}}
