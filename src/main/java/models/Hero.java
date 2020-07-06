@@ -3,7 +3,6 @@ package models;
 import javax.swing.text.html.HTMLWriter;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
-
 public class Hero {
 
     private String name;
