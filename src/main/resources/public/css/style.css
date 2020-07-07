@@ -28,7 +28,7 @@ font-size: calc(20px + 18vh);
   -webkit-animation: blink 12s infinite;
 }
 .hero-btn{
-  background: rgb(11, 68, 35);
+  background: red;
   color: white;
   padding: 5px;
   width: 60%;
@@ -36,13 +36,13 @@ font-size: calc(20px + 18vh);
   bottom: 5%;
   left: 20%;
   cursor: pointer;
-  font-family: 'Abel', sans-serif;
+  font-family: 'Charm;
   font-size: 25px;
   outline: none;
   z-index: 5;
 }
 .hero-btn:hover{
-  background: rgba(255,255,255,0.8);
+
   transition: all 0.4s ease;
   color: black;
 }
@@ -58,7 +58,8 @@ font-size: calc(20px + 18vh);
   z-index: 2;
 }
 .hero-btn:hover::after{
-  border-color:rgb(209,209,209);
+
+
   cursor: pointer;
   left: 92%;
   transition: all 0.5s ease;
@@ -81,10 +82,10 @@ font-size: calc(20px + 18vh);
   justify-content: space-around;
   flex-wrap: wrap;
   margin-top: 10vh;
-  font-family: 'Abel', sans-serif;
+  font-family: Charm;
 }
 .form-cont>div{
-  background: rgba(255, 255, 255, 0.089);
+  background:red;
   position: relative;
   height: 70%;
   text-align: center;
@@ -93,7 +94,7 @@ font-size: calc(20px + 18vh);
 .form-cont>div>a{
   display: inline-block;
   padding: 20px;
-  background: rgb(23, 43, 23);
+  background:red;
   color: white;
   width: 70%;
   left: 15%;

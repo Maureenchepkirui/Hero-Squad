@@ -14,8 +14,16 @@
                             <p>Purpose: {{cause}}</p>
                             <p>Max participants: {{ size }}</p>
                             <br><br>
+                            <h3>MEMBERS:</h3>
+                            <p>Name: {{ name }} </p>
+                            <p>Age: {{ age }}</p>
+                            <p>Special power: {{ power }}</p>
+                            <p>Weakness: {{ weakness }}</p>
+
 
                         {{/each}}
+
+
                     {{else}}
                         <h2>Add Squad to proceed</h2>
                     {{/if}}
