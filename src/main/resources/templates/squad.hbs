@@ -8,11 +8,12 @@
             {{#each heroes}}
                 <p>Name: {{name}}</p>
                 <p>Super power: {{ power }}</p>
-                <a class="btns" href="/squad/new/{{id}}">Add To Squad</a>
+                <a href="/squad/new/{{id}}"class="btn btn-warning btn-lg">ADD TO SQUAD</a><br>
 
             {{/each}}
-        <h2>
-            <a class="btns" href="/squad-form">Create Your Squad</a>
+        <h2>   <br>
+            <a href="/squad-form"class="btn btn-warning btn-lg">NEW SQUAD</a><br>
+
             <br><br>
             {{#if squads}}
                 AVAILABLE SQUADS
