@@ -2,29 +2,30 @@
     <section>
         <div class="col-md-4">
             <div class="panel">
-             <div class="panel-heading"> <h2>Choose Squad Members</h2></div>
+             <div class="panel-heading"> <h2 class="light">ADD HERO TO SQUAD</h2></div>
         <div class="panel-body">
 
             {{#each heroes}}
                 <p>Name: {{name}}</p>
                 <p>Super power: {{ power }}</p>
                 <a href="/squad/new/{{id}}"class="btn btn-warning btn-lg">ADD TO SQUAD</a><br>
+                <br>
 
             {{/each}}
-        <h2>   <br>
-            <a href="/squad-form"class="btn btn-warning btn-lg">NEW SQUAD</a><br>
 
-            <br><br>
+            <a href="/squad-form"class="btn btn-warning btn-lg">NEW SQUAD</a><br>
+              <br>
+
             {{#if squads}}
-                AVAILABLE SQUADS
-            </h2>
+                <h2 class="light">AVAILABLE SQUADS</h2>
+
                 {{#each squads}}
-                    <h1>{{ squadName }} </h1>
+                    <h2>{{ squadName }} </h2>
                     <p>Id: {{squadId}}</p>
                     <p>Purpose: {{cause}}</p>
                     <p>Max participants: {{ size }}</p>
                     <br><br>
-                    <h3>MEMBERS</h3>
+                    <h3 class="light">MEMBERS</h3>
                     {{#each squadMembers}}
                         <h5>Name: {{this.name}}</h5>
                         <h5>Power: {{power}}</h5>
