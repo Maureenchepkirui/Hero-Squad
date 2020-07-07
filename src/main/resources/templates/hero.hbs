@@ -1,27 +1,33 @@
+
 {{#partial "content"}}
     <section>
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <a href="/hero-form" class="btn btn-info">CREATE HERO</a>
-                          {{#each hero}}
-                            <div class="hero-item">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+             <div class="panel-heading">
+                <h2>CURRENT HEROES</h2>
+            </div>
+            <div class="panel-body">
+                <h2>CURRENT HEROES</h2>
 
-                                <p>Name: {{ name }} </p>
-                                <p>Age: {{ age }}</p>
-                                <p>Special power: {{ power }}</p>
-                                <p>Weakness: {{ weakness }}</p>
-                                <p>Id: {{ id }}</p>
-                                <a href="new/{{id}}" class="btn btn-info">DETAILS</a>
-                                <a href="/squad-form" class="btn btn-info">Add TO SQUAD</a>
-                            </div>
+                    {{#each hero}}
 
-                        {{/each}}
-                    </div>
+                            <img src="/img/DIAMONDHEAD06_4C.png" alt="">
+                            <p>Name: {{ name }} </p>
+                            <p>Age: {{ age }}</p>
+                            <p>Special power: {{ power }}</p>
+                            <p>Weakness: {{ weakness }}</p>
+                            <p>Id: {{ id }}</p>
+                        <a href="new/{{id}}" class="btn btn-danger">ABOUT HERO</a><br>
+                        <a href="/squad" class="btn btn-danger">Add {{ name }} To Squad</a><br>
 
-                </div>
+                    {{/each}}
             </div>
         </div>
+        </div>
+        </div>
+        <a href="/hero-form" class="btn btn-danger">MORE HEROES</a><br>
+
 
     </section>
 {{/partial}}

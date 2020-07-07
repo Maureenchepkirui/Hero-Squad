@@ -213,6 +213,7 @@ font-size: calc(20px + 18vh);
 background-color:purple;
 color:white;
 font-family:Charm;
+height:100%;
 }
 
 *, *::before, *::after {
@@ -225,14 +226,7 @@ font-family:Charm;
 	}
 }
 
-.panel {
-	position: relative;
-	z-index: 0;
-	width: 400px;
-	height: 300px;
-	border-radius: 10px;
-	overflow: hidden;
-	padding: 2rem;
+
 
 	&::before {
 		content: '';
@@ -264,7 +258,12 @@ font-family:Charm;
 	::placeholder {
       color: red;
     }
-
-
+    .nav{
+    background-color: black;
+     }
+.font{
+font-size: 80px;
+}
+}
 
 

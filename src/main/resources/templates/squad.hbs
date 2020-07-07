@@ -1,36 +1,43 @@
-
 {{#partial "content"}}
     <section>
-        <div class="col-md-3">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <a href="/squad-form" class="btn btn-info">CREATE SQUAD</a>
-                    {{#if squads}}
-                        <h3>CURRENT SQUADS</h3>
+        <div class="col-md-4">
+            <div class="panel">
+             <div class="panel-heading"> <h2>Choose Squad Members</h2></div>
+        <div class="panel-body">
 
-                        {{#each squads}}
-                            <h1>{{ squadName }} </h1>
-                            <p>Id: {{squadId}}</p>
-                            <p>Purpose: {{cause}}</p>
-                            <p>Max participants: {{ size }}</p>
-                            <br><br>
-                            <h3>MEMBERS:</h3>
-                            <p>Name: {{ name }} </p>
-                            <p>Age: {{ age }}</p>
-                            <p>Special power: {{ power }}</p>
-                            <p>Weakness: {{ weakness }}</p>
+            {{#each heroes}}
+                <p>Name: {{name}}</p>
+                <p>Super power: {{ power }}</p>
+                <a class="btns" href="/squad/new/{{id}}">Add To Squad</a>
 
+            {{/each}}
+        <h2>
+            <a class="btns" href="/squad-form">Create Your Squad</a>
+            <br><br>
+            {{#if squads}}
+                AVAILABLE SQUADS
+            </h2>
+                {{#each squads}}
+                    <h1>{{ squadName }} </h1>
+                    <p>Id: {{squadId}}</p>
+                    <p>Purpose: {{cause}}</p>
+                    <p>Max participants: {{ size }}</p>
+                    <br><br>
+                    <h3>MEMBERS</h3>
+                    {{#each squadMembers}}
+                        <h5>Name: {{this.name}}</h5>
+                        <h5>Power: {{power}}</h5>
+                    {{/each}}
+                {{/each}}
+            {{else}}
+                <h2>Please create a squad to continue</h2>
+            {{/if}}
 
-                        {{/each}}
-
-
-                    {{else}}
-                        <h2>Add Squad to proceed</h2>
-                    {{/if}}
-                </div>
-            </div>
 
         </div>
+        </div>
+        </div>
+
 
 
     </section>
