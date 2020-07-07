@@ -1,10 +1,47 @@
-
 {{#partial "content"}}
-    <div class="welcome">
-        <h1>THE INVINCIBLE HEROES</h1>
-            <br>
-        <h1>WELCOME TO HERO SQUAD.<span>CREATE YOUR HEROES AND SQUADS.</span>YOU CAN ADD YOUR HEROES TO A SQUAD.</h1>
-    </div>
-    </section>
+
+
+    {{#if username}}
+
+        <div class="row username">
+            <h1 class="welcome">Welcome {{username}} to Hero Squad.Create your squads and heroes</h1>
+        </div>
+        <div class="row indexButton">
+            <div class="create">
+                <a href="/hero-form"><button class="btn btn-success btn-lg">Create Hero</button></a>
+                <a href="/squad-form"><button class="btn btn-success btn-lg">Create Squad</button></a>
+
+            </div>
+
+
+        </div>
+
+
+    {{else}}
+        <form action="/welcome" method="post">
+            <h1 class="title">Welcome to Hero Squad </h1>
+
+            <div class="sign-in">
+                <h3 class="text">Sign in for more!!!</h3><br><br>
+                <label for="username">Name</label>
+                <input type="text" name="username" id="username">
+                <button type="submit" class="btn btn-primary btn-lg">Sign In</button>
+            </div>
+
+
+        </form>
+
+
+
+    {{/if}}
+
+
+
+
+
+
 {{/partial}}
+
+
+
 {{> layout.hbs}}

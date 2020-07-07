@@ -31,9 +31,22 @@ public class App {
 //        Squad.setUpNewSquad1();
 
         get("/", (request, response) -> {
-            Map<String, Object> model = new HashMap<>();
-            return new ModelAndView(model,"index.hbs");
+            Map<String, Object> model = new HashMap<String, Object>();
+            model.put("username", request.session().attribute("username"));
+
+            return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
+
+        post("/welcome", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+
+            String inputtedUsername = request.queryParams("username");
+            request.session().attribute("username", inputtedUsername);
+            model.put("username", inputtedUsername);
+
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+
 
         get("/hero-form",(req, res) ->{
             Map<String, Object> model = new HashMap<>();
