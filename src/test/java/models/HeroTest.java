@@ -35,6 +35,25 @@ public class HeroTest {
         Hero newHero = Hero.setUpNewHero();
         assertEquals("Girls",newHero.getWeakness());
     }
+    //<....................!testing for defence
+//    @Test
+//    public void newHero_getDefence_String(){
+//        Hero newHero = Hero.setUpNewHero();
+//        assertEquals("center",newHero.getDefence());
+//    }
+//    //testing for attack..........................
+//    @Test
+//    public void newHero_getAttack_String(){
+//        Hero newHero = Hero.setUpNewHero();
+//        assertEquals("left-center",newHero.getAttack());
+//
+//    }
+//    //............<!.testing if speed is returned correctly
+//    @Test
+//    public void newHero_getSpeed_Integer(){
+//        Hero newHero = Hero.setUpNewHero();
+//        assertEquals(200,newHero.getSpeed());
+//    }
     //<..........!....testing all instances are returned...........
     @Test
     public void newHero_getAllInstances_true() {

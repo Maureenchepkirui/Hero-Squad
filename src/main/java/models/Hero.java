@@ -9,20 +9,14 @@ public class Hero {
     private int age;
     private String power;
     private String weakness;
-    private String defence;
-    private String attack;
-    private int speed;
     private int id;
     private static ArrayList<Hero> instances = new ArrayList<>();
 
-    public Hero(String name, Integer age, String power, String weakness,String defence,String  attack,Integer speed) {
+    public Hero(String name, Integer age, String power, String weakness) {
         this.name = name;
         this.age = age;
         this.power = power;
         this.weakness = weakness;
-        this.defence = defence;
-        this.speed =  speed;
-        this.attack =attack;
         instances.add(this);
         this.id = instances.size();
     }
@@ -49,28 +43,17 @@ public class Hero {
     public int getId(){
         return id;
     }
-    public String  getDefence(){
-        return defence;
-    }
-    public String getAttack(){
-        return attack;
-    }
-    public int getSpeed(){
-        return speed;
-    }
     public static Hero findById(int id) {
-        return instances.get(id-1);
-    }
-
+        return instances.get(id-1);}
 
     public static Hero setUpNewHero(){
-        return new Hero("Henry",73,"Magic","Girls","center","left-center",200);
+        return new Hero("Henry",73,"Magic","Girls");
     }
     public static Hero setUpNewHero1(){
-        return new Hero("KidDanger",3,"Fire","Water","corner","center",500);
+        return new Hero("KidDanger",3,"Fire","Water");
     }
     public static Hero setUpNewHero2(){
-        return new Hero("ThunderMan",90,"Freezing","Fire","center","right",150);
+        return new Hero("ThunderMan",90,"Freezing","Fire");
     }
 
 }
