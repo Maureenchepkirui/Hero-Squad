@@ -3,11 +3,11 @@ plugins {
     id 'application'
 }
 
-group 'com.techspace'
+group 'com.chepkirui'
 version '1.0-SNAPSHOT'
 
 sourceCompatibility = 1.8
-applicationName = "techspaceke-hero-squad"
+applicationName = "chepkirui-hero-squad"
 mainClassName = "App"
 
 repositories {

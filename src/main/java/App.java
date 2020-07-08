@@ -28,7 +28,7 @@ public class App {
         Hero.setUpNewHero();
         Hero.setUpNewHero1();
         Squad.setUpNewSquad();
-//        Squad.setUpNewSquad1();
+        Squad.setUpNewSquad1();
 
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
