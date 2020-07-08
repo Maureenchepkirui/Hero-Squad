@@ -36,7 +36,7 @@ Clone with:(https://github.com/Maureenchepkirui/Hero-Squad.git)
 ```
 ### Live-Link
 ```bash
-
+(https://chepkirui-hero-squad.herokuapp.com/squad)
 ```
 
 ### Prerequisites

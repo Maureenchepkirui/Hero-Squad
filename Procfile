@@ -1,1 +1,2 @@
-web: ./build/install/techspaceke-hero-squad/bin/techspaceke-hero-squad
+
+web: ./build/install/chepkirui-hero-squad/bin/chepkirui-hero-squad

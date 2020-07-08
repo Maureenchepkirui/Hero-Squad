@@ -1,0 +1,34 @@
+
+{{#partial "content"}}
+    <section>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel"style="height:100;color:light-blue;">
+             <div class="panel-heading">
+                <h2 class="light">CURRENT HEROES</h2>
+            </div>
+            <div class="panel-body">
+
+                    {{#each hero}}
+
+
+                            <p>Name: {{ name }} </p>
+                            <p>Age: {{ age }}</p>
+                            <p>Special power: {{ power }}</p>
+                            <p>Weakness: {{ weakness }}</p>
+                            <p>Id: {{ id }}</p>
+
+
+                    {{/each}}
+
+            </div>
+        </div>
+        </div>
+        </div>
+        <br>
+
+
+
+    </section>
+{{/partial}}
+{{> layout.hbs}}
