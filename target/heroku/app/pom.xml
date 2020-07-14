@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>com.myCompany.app</groupId>
-  <artifactId>my-App</artifactId>
+  <artifactId>hero-Squad</artifactId>
   <version>1.0</version>
 
   <dependencies>
