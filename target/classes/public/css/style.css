@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@700&family=Merienda+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
 
 
  body{
-background-image: url('https://cdn.statically.io/img/images.hdqwalls.com/download/bad-cyber-girl-4k-7t-1920x1080.jpg');
+background-image: url('https://images8.alphacoders.com/815/815404.jpg');
 background-repeat: no-repeat;
 height:100%;
 background-size: cover;
 background-position: center ;
-font-family: 'Merienda One', cursive;
+font-family: 'El Messiri', sans-serif;
 color: white;
 
 }
@@ -127,12 +128,27 @@ font-size: calc(2px + 18vh);
   width: 500px;
   margin-top: 15vh;
   color: white;
+  font-weight:bold;
+  font-size:20px;
+
 
 }
+.large{
+color: white;
+  font-weight:bold;
+  font-size:40px;
+  }
 .form>h1{
   color: yellow;
   font-size: 2.3em;
 }
+.formstyle{
+color:white;
+font-family:Charm;
+
+}
+
+
 .form>input[type=text],
 .form>input[type=number]{
   background: none;
@@ -142,7 +158,7 @@ font-size: calc(2px + 18vh);
   border: none;
   border-bottom: 1px solid white;
   color: white;
-  outline: none;
+  outline: 10px;;
   display: block;
   animation: formLd 1.2s linear 1;
   font-size: 1em;
@@ -230,10 +246,24 @@ font-size: calc(2px + 18vh);
     text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
   }
 }
-.panel{
-background-color:purple;
+.bagone{
+background-image: url('https://theflucobeat.com/wp-content/uploads/2019/04/avengers-endgame-poster-square-crop-900x866.jpg');
+background-repeat: no-repeat;
+height:100%;
+background-size: cover;
 color:white;
 font-family:Charm;
+height:100%;
+}
+.card{
+background-image: url('https://i.ytimg.com/vi/6N40-AxeV2M/maxresdefault.jpg');
+background-repeat: no-repeat;
+height:100%;
+background-size: cover;
+font size:80px;
+font-weight:bold;
+color:Yellow;
+font-family:'El Messiri', sans-serif;
 height:100%;
 }
 

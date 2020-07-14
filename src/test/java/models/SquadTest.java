@@ -1,81 +1,74 @@
 package models;
 
+import org.junit.After;
 import org.junit.Test;
+
+import java.util.ArrayList;
 
 import static org.junit.Assert.*;
 
 public class SquadTest {
-    //<.............testing if new squad instantiates correctly.......>
+
+    @After
+    public void tearDown() throws Exception {
+        Squad.clearAll();
+    }
     @Test
-    public void newSquad_instantiatesCorrectly_true() {
-        Squad mySquad = Squad.setUpNewSquad();
-        assertTrue(mySquad instanceof Squad);
+    public void createInstanceOfSquad() throws Exception{
+        Squad squad= setUpNewSquad();
+        assertEquals(true,squad instanceof Squad);
     }
 
     @Test
-    public void newSquad_getName_String() {
-        Squad mySquad = Squad.setUpNewSquad();
-        assertEquals("Knight", mySquad.getSquadName());
+    public void returnAllInstances_true() throws Exception {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        assertEquals(2,Squad.getSquads().size());
     }
 
     @Test
-    public void newSquad_getSize_Int() {
-        Squad newSquad = Squad.setUpNewSquad();
-        assertEquals(8, newSquad.getSize());
+    public void allSquadsContainedInSquad() throws Exception {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        assertTrue(Squad.getSquads().contains(squad));
+        assertTrue(Squad.getSquads().contains(otherSquad));
     }
 
     @Test
-    public void newSquad_getPower_String() {
-        Squad newSquad = Squad.setUpNewSquad();
-        assertEquals("Crime", newSquad.getCause());
+    public void findById() throws Exception {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        Squad foundSquad=Squad.findById(1);
+        assertEquals(squad,foundSquad);
     }
+
+
 
     @Test
-    public void newSquad_getInstances_true() {
-        Squad newSquad = Squad.setUpNewSquad();
-        Squad another = Squad.setUpNewSquad();
-        assertTrue(Squad.getInstances().contains(newSquad));
-        assertTrue(Squad.getInstances().contains(another));
-    }
+    public void deleteSquadByID() {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        squad.deleteSquad();
+        assertEquals(1,Squad.getSquads().size());
+        assertEquals(Squad.getSquads().get(0).getId(),2);
 
+    }
     @Test
-    public void newSquad_getSquadMembers_Array() {
-        Squad newSquad = Squad.setUpNewSquad();
-        Hero newHero = Hero.setUpNewHero();
-        Hero newHero1 = Hero.setUpNewHero1();
-        newSquad.setSquadMembers(newHero);
-        assertEquals("Henry", newSquad.getSquadMembers().get(0).getName());
+    public void deleteAllSquads() {
+        Squad squad=setUpNewSquad();
+        Squad otherSquad=setUpNewSquad();
+        Squad.clearAll();
+        assertEquals(0,Squad.getSquads().size());
+
     }
 
-    @Test
-    public void newSquad_allTestSquadMembers_Array() {
-        Hero newHero = Hero.setUpNewHero();
-        Squad newSquad = Squad.setUpNewSquad();
-        newSquad.clearAllSquadMembers();
-        newSquad.getSquadMembers().add(newHero);
-        newSquad.getSquadMembers().add(newHero);
-        assertEquals("Henry", newSquad.getSquadMembers().get(0).getName());
+    //helper
+    private Squad setUpNewSquad() {
+        ArrayList<Hero> heroes=new ArrayList<Hero>();
+        Hero hero=new Hero("Absorbing Man",30,"Absorbing ","Can Absorb evil thought",20,60);
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        heroes.add(hero);
+        heroes.add(otherHero);
+        return new Squad(10,"queen","sexism",heroes);
     }
-
-    @Test
-    public void addMember_addsMemberToSquad_Hero() {
-        Hero newHero = Hero.setUpNewHero();
-        Squad testSquad = Squad.setUpNewSquad();
-        Squad newSquad = Squad.findBySquadId(1);
-        newSquad.clearAllSquadMembers();
-        newSquad.getSquadMembers().add(newHero);
-        newSquad.getSquadMembers().add(newHero);
-        assertEquals(2, newSquad.getSquadMembers().size());
-    }
-
-    @Test
-    public void setNewMember_hero() {
-        Hero.clearAllHeroes();
-        Hero newHero = Hero.setUpNewHero();
-        Squad testSquad = Squad.setUpNewSquad();
-        testSquad.setSquadMembers(newHero);
-
-        assertEquals(1, testSquad.getSquadMembers().get(0).getId());
-    }
-
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="models.SquadTest" time="0.006" errors="0" skipped="0">
+<testsuite tests="6" failures="0" name="models.SquadTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
     <property name="java.vm.version" value="11.0.7+10"/>
@@ -62,13 +62,10 @@
     <property name="sun.desktop" value="gnome"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="models.SquadTest" name="addMember_addsMemberToSquad_Hero" time="0.001"/>
-  <testcase classname="models.SquadTest" name="newSquad_getPower_String" time="0.005"/>
-  <testcase classname="models.SquadTest" name="newSquad_getSquadMembers_Array" time="0"/>
-  <testcase classname="models.SquadTest" name="newSquad_allTestSquadMembers_Array" time="0"/>
-  <testcase classname="models.SquadTest" name="newSquad_getSize_Int" time="0"/>
-  <testcase classname="models.SquadTest" name="setNewMember_hero" time="0"/>
-  <testcase classname="models.SquadTest" name="newSquad_instantiatesCorrectly_true" time="0"/>
-  <testcase classname="models.SquadTest" name="newSquad_getName_String" time="0"/>
-  <testcase classname="models.SquadTest" name="newSquad_getInstances_true" time="0"/>
+  <testcase classname="models.SquadTest" name="allSquadsContainedInSquad" time="0"/>
+  <testcase classname="models.SquadTest" name="findById" time="0"/>
+  <testcase classname="models.SquadTest" name="deleteAllSquads" time="0"/>
+  <testcase classname="models.SquadTest" name="returnAllInstances_true" time="0"/>
+  <testcase classname="models.SquadTest" name="createInstanceOfSquad" time="0"/>
+  <testcase classname="models.SquadTest" name="deleteSquadByID" time="0"/>
 </testsuite>

@@ -1,82 +1,80 @@
+
 package models;
 
+import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class HeroTest {
-//<..!..........here iam testing if hero instantiates correctly.......!..................>
-    @Test
-    public void newHero_instantiatesCorrectly_true() {
-        Hero myHero = Hero.setUpNewHero();
-        assertTrue(myHero instanceof Hero);
+
+    @After
+    public void tearDown() throws Exception {
+        Hero.clearAll();
     }
-    //<......!testing the getName function if it returns the name..........>
+
     @Test
-    public void newHero_getName_String() {
-        Hero newHero = Hero.setUpNewHero();
-        assertEquals("Henry",newHero.getName());
+    public void createInstanceOfHero_true() throws Exception{
+        Hero hero=setUpNewHero();
+        assertEquals(true,hero instanceof Hero);
     }
-   //<...............here am testing if the getPower function returns power......>
+
     @Test
-    public void newHero_getPower_String() {
-        Hero newHero = Hero.setUpNewHero();
-        assertEquals("Magic",newHero.getPower());
+    public void returnAllInstancesOfHero() throws Exception{
+        Hero hero=setUpNewHero();
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        assertEquals(2,Hero.getHeroes().size());
     }
-    //.....<!.........testing if getAge returns Age........................>
+
     @Test
-    public void newHero_getAge_Int() {
-        Hero newHero = Hero.setUpNewHero();
-        assertEquals(73,newHero.getAge());
+    public void allInstancesAreContainedInHero() throws Exception{
+        Hero hero=setUpNewHero();
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        assertTrue(Hero.getHeroes().contains(hero));
+        assertTrue(Hero.getHeroes().contains(otherHero));
     }
-    //<..............testing if weakness is returned by the getWeakness function.....>
+
     @Test
-    public void newHero_getWeakness_String() {
-        Hero newHero = Hero.setUpNewHero();
-        assertEquals("Girls",newHero.getWeakness());
+    public void findById() throws Exception{
+        Hero hero=setUpNewHero();
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        Hero foundHero=Hero.findById(1);
+        assertEquals(hero,foundHero);
     }
-    //<....................!testing for defence
-//    @Test
-//    public void newHero_getDefence_String(){
-//        Hero newHero = Hero.setUpNewHero();
-//        assertEquals("center",newHero.getDefence());
-//    }
-//    //testing for attack..........................
-//    @Test
-//    public void newHero_getAttack_String(){
-//        Hero newHero = Hero.setUpNewHero();
-//        assertEquals("left-center",newHero.getAttack());
-//
-//    }
-//    //............<!.testing if speed is returned correctly
-//    @Test
-//    public void newHero_getSpeed_Integer(){
-//        Hero newHero = Hero.setUpNewHero();
-//        assertEquals(200,newHero.getSpeed());
-//    }
-    //<..........!....testing all instances are returned...........
+
     @Test
-    public void newHero_getAllInstances_true() {
-        Hero myHero = Hero.setUpNewHero();
-        Hero anotherHero = Hero.setUpNewHero();
-        assertTrue(Hero.getAllInstances().contains(myHero));
-        assertTrue(Hero.getAllInstances().contains(anotherHero));
+    public void testIfInstanceIsUpdated() throws Exception {
+        Hero hero=setUpNewHero();
+        int formerID=hero.getId();
+        boolean formerOccupied=hero.isOccupied();
+        hero.updateHero(true);
+        assertEquals(formerID,hero.getId());
+        assertNotEquals(formerOccupied,hero.isOccupied());
     }
-    //<...........testing for the correct id........
+
     @Test
-    public void newHero_getId_Int() {
-        Hero.clearAllHeroes();
-        Hero newHero = Hero.setUpNewHero();
-        Hero another = Hero.setUpNewHero();
-        Hero another1 = Hero.setUpNewHero();
-        assertEquals(3,another1.getId());
+    public void deleteAll() {
+        Hero hero=setUpNewHero();
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        hero.clearAll();
+        assertEquals(0,Hero.getHeroes().size());
+
     }
-    //...................testing if a new hero displays the correct id.............>
     @Test
-    public void newHero_findById_id() {
-        Hero.clearAllHeroes();
-        Hero newHero = Hero.setUpNewHero();
-        Hero another = Hero.setUpNewHero();
-        assertEquals(2,Hero.findById(another.getId()).getId());
+    public void deleteSpecificHero() {
+        Hero hero=setUpNewHero();
+
+        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
+        hero.deleteHero();
+        assertEquals(1,Hero.getHeroes().size());
+        assertEquals(Hero.getHeroes().get(0).getId(),2);
+
+
     }
+
+    //helper
+    private Hero setUpNewHero() {
+        return new Hero("Absorbing Man",30,"Absorbing ","Can Absorb evil thought",20,60);
+    }
+
 }

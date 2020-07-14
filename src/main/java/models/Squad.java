@@ -1,44 +1,70 @@
 package models;
 
-import java.net.HttpRetryException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Squad {
 
-    private int squadId;
-    private String squadName;
-    private int squadSize;
+    private int id;
+    private int maxSize;
+    private String name;
     private String cause;
-    private ArrayList<Hero>  squadMembers = new ArrayList<>();
-    private static ArrayList<Squad> instances = new ArrayList<>();
+    private ArrayList<Hero> heroes;
+    public static ArrayList<Squad> squads=new ArrayList<Squad>();
 
+    public Squad(int maxSize, String name, String cause, ArrayList<Hero> heroes) {
 
-    public Squad(String name, int size, String cause ){
-        squadName = name;
-        squadSize = size;
+        this.maxSize = maxSize;
+        this.name = name;
         this.cause = cause;
-        this.squadMembers = new ArrayList<>();
-        instances.add(this);
-        this.squadId = instances.size();
+        this.heroes = heroes;
+        squads.add(this);
+        this.id=squads.size();
+    }
+
+    public static ArrayList<Squad> getSquads() {
+        return squads;
+    }
+
+    public ArrayList<Hero> getHeroes() {
+        return heroes;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void deleteSquad(){
+        squads.remove(id-1);
+    }
+
+
+
+    public static void clearAll(){
+        squads.clear();
+    }
+
+    public static Squad findById(int id){
+        try {
+            return squads.get(id-1);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
 
     }
-    public int getSquadId(){return squadId;}
-    public static Squad findBySquadId(int id) {return instances.get(id-1);}
-    public String getSquadName() {return squadName;}
-    public int getSize() {return squadSize;}
-    public String getCause() {return this.cause;}
-    public static ArrayList<Squad> getInstances(){return instances;}
-    public ArrayList<Hero> getSquadMembers(){
-        return squadMembers;
-    }
-    public void setSquadMembers(Hero newMember) {
-        squadMembers.add(newMember);
-    }
-    public static void clearAllSquads(){ instances.clear(); }
-    public void clearAllSquadMembers(){ getSquadMembers().clear(); }
 
-  public static Squad setUpNewSquad(){return new Squad("Knight",8,"Crime");}
-  public static Squad setUpNewSquad1(){return new Squad("Dino",15,"Illeteracy");}
+    public int getId() {
+        return id;
+    }
 
+    public int getMaxSize() {
+        return maxSize;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCause() {
+        return cause;
+    }
 }
