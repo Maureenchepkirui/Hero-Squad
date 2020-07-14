@@ -1,6 +1,6 @@
 #### Hero Squad
 #### By **MAUREEN CHEPKIRUI**
-![](screenshot1.png)
+![](Screenshot2.png)
 
 
 
