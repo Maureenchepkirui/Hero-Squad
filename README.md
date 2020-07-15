@@ -11,12 +11,15 @@
 MAUREEN CHEPKIRUI
 ```
 ### -*Initial works*-
-```bash
-[a link](https://github.com/Maureenchepkirui/GitSearch) GitSearch-A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
-[a link](https://github.com/Maureenchepkirui/Quotes)    Quotes -An application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
-[PizzaApp](https://github.com/Maureenchepkirui/IP4PIZZA)Pizza-A Web application that allows customers to select the type of pizza the need and also request delivery if need be.
-[Portfolio](https://github.com/Maureenchepkirui/Independent-Project---Portfolio-Landing-Page)Portfolio-A portfolio about my projects,skills,interests and hobbies.
-  ```
+
+[GitSearch](https://github.com/Maureenchepkirui/GitSearch) GitSearch-A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
+
+[QuotesApp](https://github.com/Maureenchepkirui/Quotes)   -An application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
+
+[PizzaApp](https://github.com/Maureenchepkirui/IP4PIZZA) -A Web application that allows customers to select the type of pizza the need and also request delivery if need be.
+
+
+  
 
 ## Description
 
@@ -27,17 +30,18 @@ The heroes should also have a max size, name, and a cause
 a hero can only participate in one Squad at a time.
 ```
 ## Getting Started
-```bash
+
 
 Clone this repository to your local machine to get Started
-<a href="https://github.com/Maureenchepkirui/Hero-Squad">Git HUB</a>
+
+<a href="https://github.com/Maureenchepkirui/Hero-Squad">Git HUB</a>- link to my account
 
 Clone with:(https://github.com/Maureenchepkirui/Hero-Squad.git)
-```
+
 ### Live-Link
-```bash
+
 <a href="https://chepkirui-hero-squad.herokuapp.com/squad">Hero Squad</a>
-```
+
 
 ### Prerequisites
 ```bash
