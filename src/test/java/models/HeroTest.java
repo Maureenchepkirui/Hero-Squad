@@ -1,56 +1,89 @@
 
 package models;
 
+
 import org.junit.After;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
 
 public class HeroTest {
-
     @After
     public void tearDown() throws Exception {
         Hero.clearAll();
     }
 
+
     @Test
-    public void createInstanceOfHero_true() throws Exception{
+    public void HeroInstantiatesCorrectly_true() throws Exception{
         Hero hero=setUpNewHero();
         assertEquals(true,hero instanceof Hero);
     }
 
     @Test
-    public void returnAllInstancesOfHero() throws Exception{
+    public void AllInstancesOfHeroReturned() throws Exception{
         Hero hero=setUpNewHero();
         Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
         assertEquals(2,Hero.getHeroes().size());
     }
-
     @Test
-    public void allInstancesAreContainedInHero() throws Exception{
+    public void HeroNameReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        String expected = "Henry";
+        assertEquals(expected, myHero.getName());
+
+    }
+    @Test
+    public void HeroPowerReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        String expected = "Fire";
+        assertEquals(expected, myHero.getPowers());
+
+    }
+    @Test
+    public void HeroWeaknessReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        String expected = "girls";
+        assertEquals(expected, myHero.getWeakness());
+
+    }
+    @Test
+    public void HeroAgeReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        int expected = 80;
+        assertEquals(expected, myHero.getAge());
+
+    }
+    @Test
+    public void HeroDefenceReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        int expected = 10;
+        assertEquals(expected, myHero.getDefence());
+
+    }
+    @Test
+    public void HeroAttackReturnedCorrectly() throws Exception{
+        Hero hero =setUpNewHero();
+        Hero myHero = new Hero("Henry",80,"Fire","girls",10,10);
+        int expected = 10;
+        assertEquals(expected, myHero.getAttack());
+
+    }
+//
+    @Test
+    public void HeroContainsAllHeroInstances() throws Exception{
         Hero hero=setUpNewHero();
         Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
         assertTrue(Hero.getHeroes().contains(hero));
         assertTrue(Hero.getHeroes().contains(otherHero));
     }
 
-    @Test
-    public void findById() throws Exception{
-        Hero hero=setUpNewHero();
-        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
-        Hero foundHero=Hero.findById(1);
-        assertEquals(hero,foundHero);
-    }
 
-    @Test
-    public void testIfInstanceIsUpdated() throws Exception {
-        Hero hero=setUpNewHero();
-        int formerID=hero.getId();
-        boolean formerOccupied=hero.isOccupied();
-        hero.updateHero(true);
-        assertEquals(formerID,hero.getId());
-        assertNotEquals(formerOccupied,hero.isOccupied());
-    }
 
     @Test
     public void deleteAll() {
@@ -60,21 +93,10 @@ public class HeroTest {
         assertEquals(0,Hero.getHeroes().size());
 
     }
-    @Test
-    public void deleteSpecificHero() {
-        Hero hero=setUpNewHero();
-
-        Hero otherHero=new Hero("Abraxas",60,"Read Minds ","Gets tired fast",20,60);
-        hero.deleteHero();
-        assertEquals(1,Hero.getHeroes().size());
-        assertEquals(Hero.getHeroes().get(0).getId(),2);
 
 
-    }
-
-    //helper
     private Hero setUpNewHero() {
-        return new Hero("Absorbing Man",30,"Absorbing ","Can Absorb evil thought",20,60);
+        return new Hero("Henry",30,"Fire","girls",10,10);
     }
 
 }

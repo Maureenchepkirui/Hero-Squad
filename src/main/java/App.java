@@ -40,7 +40,7 @@ public class App {
 
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
-
+//Directing user to the welcome page after logging in
         post("/welcome", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
 
@@ -48,24 +48,25 @@ public class App {
             request.session().attribute("username", inputtedUsername);
             model.put("username", inputtedUsername);
 
-            return new ModelAndView(model, "index.hbs");
+            return new ModelAndView(model, "index.hbs");//return index to display the page content
         }, new HandlebarsTemplateEngine());
 
-        //hero form
+        //request for deleting all heroes
         get("/heroes/delete",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Hero.clearAll();
             model.put("heroes",Hero.getHeroes());
-            return new ModelAndView(model,"hero-view.hbs");
-
+            return new ModelAndView(model,"hero-view.hbs");//view
+//allowing user to create their heroes
         },new HandlebarsTemplateEngine());
         get("/create/hero",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
-            return new ModelAndView(model, "hero-form.hbs");
+            return new ModelAndView(model, "hero-form.hbs");//the display the user is interacting with
 
         },new HandlebarsTemplateEngine());
 
-        post("/heroes/new", (request, response) -> { //URL to make new post on POST route
+
+        post("/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
             String name = request.queryParams("name");
@@ -90,7 +91,8 @@ public class App {
 
         get("/heroes/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
-            int idOfHeroToFind = Integer.parseInt(request.params(":id")); //pull id - must match route segment
+            //id to match the route requested
+            int idOfHeroToFind = Integer.parseInt(request.params(":id"));
             Hero foundHero = Hero.findById(idOfHeroToFind); //use it to find post
             model.put("hero", foundHero); //add it to model for template to display
             ArrayList<Hero> heroes = Hero.getHeroes();
@@ -124,7 +126,7 @@ public class App {
             model.put("heroes",Hero.getHeroes());
             return new ModelAndView(model,"squad-form.hbs");
         },new HandlebarsTemplateEngine());
-        post("/squads/new", (request, response) -> { //URL to make new post on POST route
+        post("/squads/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
             String name = request.queryParams("name");
