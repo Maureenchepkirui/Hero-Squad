@@ -19,6 +19,7 @@ dependencies {
     compile "com.sparkjava:spark-core:2.6.0"
     compile 'org.slf4j:slf4j-simple:1.7.21'
     compile "com.sparkjava:spark-template-handlebars:2.5.5"
+    compile "org.apache.maven.plugins:maven-compiler-plugin:2.3.2"
 
 }
 defaultTasks = ['clean']

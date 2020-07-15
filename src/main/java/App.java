@@ -23,17 +23,17 @@ public class App {
             port = 4567;
         }
         port(port);
-
         staticFileLocation("/public");
-        Hero hero1 =new Hero("HenryDanger",73,"Fire","Water",10,50);
-        Hero hero2 =new Hero("KidDanger",7,"Indestructible "," Girls",10,30);
-        Hero hero3 =new Hero("Phoebe",19," Spit fire","music",20,60);
-        Hero hero4 =new Hero("Max",19,"Freezing","Girls",10,40);
-        Hero hero5 =new Hero("Clowie",2,"Vanishing","Chocolates",20,40);
-        Hero hero6 =new Hero("Billy",9,"speed","Food",20,60);
-        Hero hero7 =new Hero("Norah",7,"Electric-eyes","Sleep",10,30);
-        Hero hero8 =new Hero("Barb",19,"Strong","Cute men",20,30);
-        //user session...........
+        Hero hero1 = new Hero("HenryDanger", 73, "Fire", "Water", 10, 50);
+        Hero hero2 = new Hero("KidDanger", 7, "Indestructible ", " Girls", 10, 30);
+        Hero hero3 = new Hero("Phoebe", 19, " Spit fire", "music", 20, 60);
+        Hero hero4 = new Hero("Max", 19, "Freezing", "Girls", 10, 40);
+        Hero hero5 = new Hero("Clowie", 2, "Vanishing", "Chocolates", 20, 40);
+        Hero hero6 = new Hero("Billy", 9, "speed", "Food", 20, 60);
+        Hero hero7 = new Hero("Norah", 7, "Electric-eyes", "Sleep", 10, 30);
+        Hero hero8 = new Hero("Barb", 19, "Strong", "Cute men", 20, 30);
+
+
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("username", request.session().attribute("username"));
