@@ -27,13 +27,13 @@ public class App {
         staticFileLocation("/public");
         Hero hero1 =new Hero("HenryDanger",73,"Fire","Water",10,50);
         Hero hero2 =new Hero("KidDanger",7,"Indestructible "," Girls",10,30);
-        Hero hero3 =new Hero("PhoebeThunderman",19," Spit fire","music",20,60);
-        Hero hero4 =new Hero("MaxThunderman",19,"Freezing","Girls",10,40);
-        Hero hero5 =new Hero("ClowieThunderman",2,"Vanishing","Chocolates",20,40);
-        Hero hero6 =new Hero("BillyThunderman",9,"speed","Food",20,60);
-        Hero hero7 =new Hero("NorahThunderman",7,"Electric-eyes","Sleep",10,30);
+        Hero hero3 =new Hero("Phoebe",19," Spit fire","music",20,60);
+        Hero hero4 =new Hero("Max",19,"Freezing","Girls",10,40);
+        Hero hero5 =new Hero("Clowie",2,"Vanishing","Chocolates",20,40);
+        Hero hero6 =new Hero("Billy",9,"speed","Food",20,60);
+        Hero hero7 =new Hero("Norah",7,"Electric-eyes","Sleep",10,30);
         Hero hero8 =new Hero("Barb",19,"Strong","Cute men",20,30);
-        //start session
+        //user session...........
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             model.put("username", request.session().attribute("username"));
@@ -65,7 +65,7 @@ public class App {
 
         },new HandlebarsTemplateEngine());
 
-
+//form action path.............
         post("/heroes/new", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
 
@@ -77,33 +77,34 @@ public class App {
             int attack = Integer.parseInt(request.queryParams("attack"));
             Hero newHero = new Hero(name,age,powers,weakness,defence,attack);
             model.put("heroes", newHero);
-            return new ModelAndView(model, "success.hbs");
+            return new ModelAndView(model, "success.hbs");//..........view
         }, new HandlebarsTemplateEngine());
-
+//<..............path for the see heroes button after user logging in....................
         get("/hero", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> heroes = Hero.getHeroes();
             model.put("heroes", heroes);
 
-            return new ModelAndView(model, "hero-view.hbs");
+            return new ModelAndView(model, "hero-view.hbs");//page the user interacts with..............
         }, new HandlebarsTemplateEngine());
 
-
+//<...........getting details of a specific hero by matching id........................
         get("/heroes/:id", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             //id to match the route requested
             int idOfHeroToFind = Integer.parseInt(request.params(":id"));
-            Hero foundHero = Hero.findById(idOfHeroToFind); //use it to find post
+            Hero foundHero = Hero.findById(idOfHeroToFind);
             model.put("hero", foundHero); //add it to model for template to display
             ArrayList<Hero> heroes = Hero.getHeroes();
             model.put("heroes", heroes);
             return new ModelAndView(model, "hero-view.hbs"); //individual post page.
         }, new HandlebarsTemplateEngine());
 
-        //squad
+//        <...................clearing all squads....................
         get("/squads/delete",(request, response) -> {
             Map<String, Object> model = new HashMap<String, Object>();
             Squad.clearAll();
+// <.........update heroes as not occupied since all squads have been cleared................................
             ArrayList<Hero> heroes=Hero.getHeroes();
             for (int i=0;i<heroes.size();i++){
                 heroes.get(i).updateHero(false);
@@ -112,7 +113,7 @@ public class App {
             return new ModelAndView(model,"squad-view.hbs");
 
         },new HandlebarsTemplateEngine());
-
+//<..............adding heroes to squad........heroes not occupied.................................
         get("/create/squad",(request, response) -> {
             Map<String, Object> model = new HashMap<>();
             ArrayList<Hero> heroes=Hero.getHeroes();

@@ -32,7 +32,7 @@ public class Squad {
     public void setId(int id) {
         this.id = id;
     }
-
+//deleting a squad
     public void deleteSquad(){
         squads.remove(id-1);
     }
