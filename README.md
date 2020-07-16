@@ -10,17 +10,6 @@
 ```bash
 MAUREEN CHEPKIRUI
 ```
-### -*Initial works*-
-
-[GitSearch](https://github.com/Maureenchepkirui/GitSearch) GitSearch-A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
-
-[QuotesApp](https://github.com/Maureenchepkirui/Quotes)   -An application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
-
-[PizzaApp](https://github.com/Maureenchepkirui/IP4PIZZA) -A Web application that allows customers to select the type of pizza the need and also request delivery if need be.
-
-
-  
-
 ## Description
 
 ```bash
@@ -29,14 +18,32 @@ where at the very least, they should have a name, age, special power and weaknes
 The heroes should also have a max size, name, and a cause
 a hero can only participate in one Squad at a time.
 ```
+
+### -*Initial works*-
+
+[GitSearch](https://github.com/Maureenchepkirui/GitSearch) GitSearch-A website where users may enter a GitHub username into a form, submit it, and see names and descriptions of that person's public repositories. A person can also look for repositories
+
+[QuotesApp](https://github.com/Maureenchepkirui/Quotes)   -An application where users can create quotes and have those quotes voted on whether they are terrible or are inspirational.
+
+[PizzaApp](https://github.com/Maureenchepkirui/IP4PIZZA) -A Web application that allows customers to select the type of pizza the need and also request delivery if need be.
+
 ## Getting Started
 
+Fork this repository
 
 Clone this repository to your local machine to get Started
 
+clone with:`git clone https://github.com/Maureenchepkirui/Hero-Squad.git` on your terminal
+
+Open with intellij or your preferred IDE
+
+Navigate to App in `scr\main\java `and run App
+
+Open  `local host 4567`
+
 <a href="https://github.com/Maureenchepkirui/Hero-Squad">Git HUB</a>- link to my account
 
-Clone with:(https://github.com/Maureenchepkirui/Hero-Squad.git)
+
 
 ### Live-Link
 

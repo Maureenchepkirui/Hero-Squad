@@ -1,0 +1,37 @@
+{{#partial "content"}}
+    <div class="formstyle">
+        <form action="/squads/new" method="post">
+            <h3>Create New Squad !!</h3>
+            <hr>
+            <div class="form">
+                <label for="name">Name</label><br>
+                <input type="text"  placeholder="Enter your squad name..."name="name" id="name"><br>
+                <label for="size">Max size</label><br>
+                <input type="number" placeholder="Enter squad max size..." name="size" id="size" ><br>
+                <label for="cause">Cause</label><br>
+                <input type="text"  placeholder="What is your squad fighting...."name="cause" id="cause"><br>
+
+            </div>
+              <label for="heroes"class="light">Choose heroes</label><br><br>
+
+
+            {{#if heroes}}
+                {{#each heroes}}
+                    {{#if occupied}}
+
+                    {{else}}
+                        <h3><input type="checkbox" name="heroes" id={{id}} value={{id}}> {{name}}</h3>
+                    {{/if}}
+
+                {{/each}}
+            {{else}}
+                <a href="/create/hero"><button class="light btn-warning btn-lg">Create Hero</button></a>
+            {{/if}}
+
+            <button type="submit" class="light btn-success btn-sm">Create</button>
+
+        </form>
+    </div>
+
+{{/partial}}
+{{> layout.hbs}}
