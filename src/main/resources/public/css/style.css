@@ -10,9 +10,14 @@ height:100%;
 background-size: cover;
 background-position: center ;
 font-family: 'El Messiri', sans-serif;
-color: white;
+color: #D4AF37;
 
 }
+.gs{
+color: #D4AF37;
+font-family: 'El Messiri', sans-serif;
+}
+
 .gold{
 font-family: 'El Messiri', sans-serif;
 color:gold ;
@@ -337,7 +342,7 @@ margin:20px;
 }
 .light{
       font-size: 40px;
-      color: #fff;
+      color: #D4AF37;
       text-align: center;
       -webkit-animation: glowing 1s ease-in-out infinite alternate;
       -moz-animation: glowing 1s ease-in-out infinite alternate;
